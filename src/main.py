@@ -1,9 +1,10 @@
 import classUtils
-import codecs
 
 def loadFile(path):
-    with codecs.open(path, 'r', 'utf-8', 'ignore') as text:
-        return text.read()
+    with open(path, encoding='utf-8', errors='ignore') as f:
+        text = f.readlines()
+    text = list(filter(lambda x: x != '\n', text))
+    return "".join(text)
 
 def getThematics():
     thematicsList = []
