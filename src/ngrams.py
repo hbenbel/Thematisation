@@ -1,5 +1,6 @@
 from collections import Counter
 from functools import reduce
+import re
 
 def shingles(words, k=3):
   for i in range(len(words) - k + 1):
@@ -15,7 +16,8 @@ def count_ngrams(docs, k_grams=3):
   else:
     return Counter(shingles(words(docs), k_grams))
 
-def freqs(docs, k_grams=3):
+def freqs(doc, k_grams=3):
+  docs = re.sub(r'[^\w\s]*','', doc).lower()
   counter = count_ngrams(docs, k_grams)
   counts = counter.values()
   ngrams = counter.keys()
