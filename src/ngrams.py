@@ -23,4 +23,4 @@ def freqs(doc, k_grams=3):
   ngrams = counter.keys()
   total = sum(counts)
   freqs = map(lambda c: c / total, counts)
-  return list(zip(ngrams, freqs));
+  return sorted(list(zip(ngrams, freqs)), key=lambda x: x[1], reverse=True);
