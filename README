@@ -7,7 +7,71 @@
 
 DESCRIPTION
 	Pipeline that learns and recognize thematics.
+
 USAGE
+	  There are 2 programs to run sequentially (i.e one after another).
+    The first one, themes.py, takes themes and text files for each theme
+    as input and produces theme files (.thm) as output.
+    The second one, jaccard.py, takes a file to classify and some theme files as
+    input and display a classification index for each theme.
+
+      In between usage of the first and second program, the user may modify
+    freely the produced theme files (thm), each of which contains the name of
+    the theme on the first line, then (by order of relevance) one ngram per
+    line with a relevance score written next to it (separated by a tab). The
+    score is not used by the second program and is merely shown to help the user
+    in editing the theme file. One can freely add a ngram to the file (all lowercase,
+    no punctuation, same number of spaces as other ngrams, no need to put a score),
+    or remove existing ngrams.
+
+      Since all of the ngrams are always written, one may want to remove the
+    last ones (with the lowest score). One good way to keep the first k-1 ngrams
+    is to use the following command:
+
+		head -n $k my_theme.thm | sponge my_theme.thm
+
+	where sponge is a utility available in the moreutils package. The following
+    shell function would also work fine as a replacement for sponge:
+
+		function sponge() {
+          local tmp=`mktemp`
+          cat > "$tmp"
+          cat "$tmp" > "$1"
+        }
+
+      The first program takes configuration files as input (if none is provided,
+    it reads from stdin). The configuration files should hold tokens on every
+    lines such that the first token of each line is a theme and the following
+    tokens refer to sample text files for this theme. Tokens are lexed using
+    shell-like rules and quoting, and the provided file paths support globbing.
+    Note that the paths are relative to the configuration file's location, not
+    the current working directory. Also note that this only applies to the
+    configuration files: the theme files do not support these features and their
+    only syntax is line separators and tabs. Themes' filenames are derived from
+    the themes themselves (lowercase, punctuation is replaced with underscores)
+	so be wary of conflicting theme names.
+
+    Run either program with no arguments to print a quick usage reminder.
+
+EXAMPLES
+    sh$ cat resources/themes.conf
+    Dogs test?_dog.txt
+    Cars test?_voiture.txt
+    Pies test?_pie.txt
+	sh$ src/themes.py 3 resources/themes.conf
+	sh$ for thm in *.thm; do head -n 43 $thm | sponge $thm; done
+	sh$ src/jaccard.py 3 resources/test.txt dogs.thm cars.thm
+    Dogs ==> 0.07142857142857142
+    Cars ==> 0.0
+
+    sh$ cat resources/themes.conf
+    "Sports critics" sports/*
+    "Food reviews"   food/* reviews/food_*
+    Sports\ critics  reviews/sports_*
+    "Mistakes made"  mistakes made/*
+    sh$ src/themes.py 2 resources/themes.conf
+    WARNING: This pattern did not match any file (Th: 'Mistakes made'): mistakes
+    WARNING: This pattern did not match any file (Th: 'Mistakes made'): made/*
 
 CONTRIBUTORS
 	Sirine Kéfi
