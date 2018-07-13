@@ -61,10 +61,10 @@ EXAMPLES
     Dogs test?_dog.txt
     Cars test?_voiture.txt
     Pies test?_pie.txt
-	sh$ python src/themes.py 3 resources/themes.conf
+	sh$ python src/themes.py 2 resources/themes.conf
 	sh$ for thm in *.thm; do head -n 43 $thm | sponge $thm; done
-	sh$ python src/jaccard.py 3 resources/test.txt dogs.thm cars.thm
-    Dogs ==> 0.0
+	sh$ python src/jaccard.py 2 resources/test.txt dogs.thm cars.thm
+    Dogs ==> 0.07142857142857142
     Cars ==> 0.0
 
     sh$ cat resources/themes.conf
