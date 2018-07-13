@@ -1,0 +1,16 @@
+
+
+Fin mai Nvidia annonçait la mise à jour de sa Shield TV vers la version 8 d’Android TV, alias Oreo. Une nouvelle interface franchement bienvenue dans la mesure où elle rafraîchit sérieusement l’ergonomie du système d’exploitation TV de Google, histoire de rattraper son retard sur webOS de LG ou encore Tizen de Samsung. Un retard rattrapé également en matière de fonction puisque, du côté des constructeurs coréens, les intelligences artificielles sont déjà aux commandes des téléviseurs. Désormais, grâce à la Shield de Nvidia, il est possible de s’adresser à l’Assistant de Google quelle que soit la marque de votre téléviseur.
+Parler librement grâce à la manette
+
+L’intelligence artificielle de Google est disponible avec la première version de la Shield TV, mais c’est avec la version Shield TV 4K HDR qu’elle est le plus agréable à utiliser. Explications.
+
+Avec la première version de la box, il faut activer le micro de la petite télécommande en maintenant le bouton appuyé. Avec la version 4K HDR, Nividia a fait en sorte que le micro de la manette de jeu reste actif en permanence. Ainsi, à la manière d’une enceinte Google Home (et autres), il suffit de dire à voix haute « OK Google » pour que l’assistant vous réponde sur le téléviseur.
+
+Google Assistant permet également de discuter avec des intelligences tierces tels que « le sommelier d’Auchan » qui vous recommande une sélection de vins pour accompagner votre plat. Et quitte à utiliser l’IA en cuisine, vous pourrez également solliciter Google Assistant pour qu'il vous donner la liste des ingrédients de la recette du bœuf bourguignon, par exemple.
+
+Enfin, en plus de l’arrivée de l’Assistant, cette mise à jour de la Shield TV, Nvidia étend l’expérience GeForce Now à son boîtier de salon. Il devient ainsi possible de profiter des jeux des plate-formes Steam ou Uplay sur votre grand téléviseur.
+Google Assistant sur les télés Android
+
+Avec cette mise à jour, Nvidia tient une petite avance sur les traditionnels constructeurs de TV qui peinent encore à déployer la version 8 d’Android TV sur leurs appareils. Néanmoins, Oreo devrait arriver dans le courant de l’été.
+En outre, chez Sony par exemple, Google Assistant serait accessible d’ici une dizaine de jours sur les modèles de téléviseurs sortis en 2017 et 2018. Gageons que le déploiement des mises à jour ne tardera pas chez les autres constructeurs commercialisant des téléviseurs sous Android TV.
