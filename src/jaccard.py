@@ -19,7 +19,7 @@ def parse_args():
   # assume that the user feeds valid input to the program
   return k, f, thms
 
-def jaccard_dist(s1, s2):
+def jaccard_index(s1, s2):
   return len(s1 & s2) / len(s1 | s2)
 
 if __name__ == "__main__":
@@ -27,6 +27,6 @@ if __name__ == "__main__":
   with open(file_to_classify, 'r') as f:
     ngrams = set(shingles(f.read(), kgrams))
   themes = parser.parse_themes(*theme_files)
-  jacidx = sorted(map(lambda t: (t, jaccard_dist(themes[t], ngrams)), themes), key=lambda x: x[1], reverse=True)
+  jacidx = sorted(map(lambda t: (t, jaccard_index(themes[t], ngrams)), themes), key=lambda x: x[1], reverse=True)
   for th, dist in jacidx:
     print(th,"==>", str(dist))
