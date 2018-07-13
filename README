@@ -58,9 +58,9 @@ USAGE
 
 EXAMPLES
     sh$ cat resources/themes.conf
-    Dogs test?_dog.txt
+    Dogs test?_chien.txt
     Cars test?_voiture.txt
-    Pies test?_pie.txt
+    Birds test?_oiseau.txt
 	sh$ python src/themes.py 2 resources/themes.conf
 	sh$ for thm in *.thm; do head -n 43 $thm | sponge $thm; done
 	sh$ python src/jaccard.py 2 resources/test.txt dogs.thm cars.thm
