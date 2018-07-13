@@ -1,21 +1,33 @@
+import os
 import os.path
-import sys.stdin
+import sys
 from glob import iglob as glob
 from shlex import split as shplit
 
-def parse(*paths):
+def parse_themes(*paths):
+  themes = {}
+  for path in paths:
+    with open(path, 'r') as f:
+      th = f.readline()[:-len(os.linesep)]
+      ngs = set()
+      for line in f:
+        ngs.add(line.rsplit('\t')[0])
+      themes[th] = ngs
+  return themes
+
+def parse_confs(*paths):
   if not paths:
-    return parse_file(sys.stdin)
+    return parse_conf_file(sys.stdin)
   thematics = {}
   for path in paths:
     dirname = os.path.dirname(path)
     with open(path, 'r') as f:
-      new_themas = parse_file(f, dirname)
+      new_themas = parse_conf_file(f, dirname)
       for th in new_themas:
         add_files_to_thematic(thematics, th, *new_themas[th])
   return thematics
 
-def parse_file(f, dirname=''):
+def parse_conf_file(f, dirname=''):
   thematics = {}
   for line in f:
     thema, *patts = shplit(line)
