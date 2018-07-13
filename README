@@ -9,6 +9,9 @@ DESCRIPTION
 	Pipeline that learns and recognize thematics.
 
 USAGE
+		./themes.py K [CONFIG_FILE]...
+		./jaccard.py K TARGET [THEME_FILE]...
+
 	  There are 2 programs to run sequentially (i.e one after another).
     The first one, themes.py, takes themes and text files for each theme
     as input and produces theme files (.thm) as output.
